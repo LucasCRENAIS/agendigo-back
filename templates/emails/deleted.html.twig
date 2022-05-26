@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}<h2>Rendez-vous supprimé</h2>{% endblock %}
+
+{% block body %}
+
+<div class="card" style="width: 36rem;">
+  <img src="{{ email.image('@images/logo_agendigo.svg') }}" class="card-img-top">
+  <div class="card-body">
+    <h3 class="card-title">Votre rendez-vous à bien été supprimé </h3>
+    <hr>
+    <h4>Le rendez-vous a été correctement supprimé de votre agenda</h4>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}<h2>Bienvenue !</h2>{% endblock %}
+
+{% block body %}
+
+<div class="card" style="width: 36rem;">
+  <img src="{{ email.image('@images/logo_agendigo.svg') }}" class="card-img-top">
+  <div class="card-body">
+    <h3 class="card-title">Votre inscription a bien été enregistrée !</h3>
+    <hr>
+    <p>Vous pouvez dès a présent commencer à organiser vos rendez-vous sur notre plateforme. </p>
+    <p> Pour débuter, connectez-vous à votre espace et :</p>
+    <li>Prenez et gérer facilement vos RDV en ligne historique</li>
+    <li>Retrouvez tous vos historiques de RDV en ligne</li>
+    <li>Gagnez du temps sur la gestion de votre planning</li>
+  </div>
+</div>
+
+{% endblock %}
