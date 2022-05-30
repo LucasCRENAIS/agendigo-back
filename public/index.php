@@ -9,6 +9,12 @@ require dirname(__DIR__).'/vendor/autoload.php';
 
 (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 
+if (! isset($_SERVER['HTTPS']) or $_SERVER['HTTPS'] == 'off' ) {
+    $redirect_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header("Location: $redirect_url");
+    exit();
+}
+
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);
     Debug::enable();
@@ -19,9 +25,3 @@ $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
-
-if (! isset($_SERVER['HTTPS']) or $_SERVER['HTTPS'] == 'off' ) {
-    $redirect_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    header("Location: $redirect_url");
-    exit();
-}
