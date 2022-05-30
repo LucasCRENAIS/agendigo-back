@@ -15,13 +15,13 @@ if (! isset($_SERVER['HTTPS']) or $_SERVER['HTTPS'] == 'off' ) {
     exit();
 }
 
-if ($_SERVER['APP_DEBUG']) {
-    umask(0000);
-    Debug::enable();
-}
-
-$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
-$request = Request::createFromGlobals();
-$response = $kernel->handle($request);
-$response->send();
-$kernel->terminate($request, $response);
+//if ($_SERVER['APP_DEBUG']) {
+//    umask(0000);
+//    Debug::enable();
+//}
+//
+//$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+//$request = Request::createFromGlobals();
+//$response = $kernel->handle($request);
+//$response->send();
+//$kernel->terminate($request, $response);
